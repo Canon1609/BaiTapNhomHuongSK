@@ -53,7 +53,7 @@ public class TimXe extends JPanel {
         b.add(Box.createVerticalStrut(20));
 
         b.add(b2 = Box.createHorizontalBox());
-        b2.add(lblNhapTen = new JLabel("Loại Xe Cần Tìm: "));
+        b2.add(lblNhapTen = new JLabel("Loại Xe: "));
         lblNhapTen.setPreferredSize(lblNhapMa.getPreferredSize());
         b2.add(Box.createHorizontalStrut(30));
         b2.add(txtTen = new JTextField(50));
@@ -66,7 +66,6 @@ public class TimXe extends JPanel {
         txtThongBao.setEditable(false);
         txtThongBao.setForeground(Color.RED);
         txtThongBao.setFont(new Font("Arial",Font.ITALIC,14));
-        //txtThongBao.setText("Lỗi!");
 
         b.add(Box.createVerticalStrut(40));
         b.add(b4 = Box.createHorizontalBox());

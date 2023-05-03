@@ -47,8 +47,6 @@ public class GD_Chinh extends JFrame{
         Font fontMenu = new Font("Arial",Font.BOLD,16);
         menuHeThong.setFont(fontMenu);
         JMenuItem qlnd,dmk,dx,t;
-//        menuHeThong.add(dmk = new JMenuItem("Đổi mật khẩu"));
-//        dmk.setPreferredSize(new Dimension(200,40));
         menuHeThong.add(dx = new JMenuItem("Đăng xuất"));
         dx.setPreferredSize(new Dimension(200,40));
         dx.setMnemonic(KeyEvent.VK_O);
@@ -57,7 +55,7 @@ public class GD_Chinh extends JFrame{
         dx.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Login lg = new Login();
+                Login_gui lg = new Login_gui();
                 lg.setVisible(true);
                 setVisible(false);
             }
@@ -110,35 +108,31 @@ public class GD_Chinh extends JFrame{
         hdx.setPreferredSize(new Dimension(240,40));
         menuBaoCao.add(hdn = new JMenuItem("Hàng đã nhập"));
         hdn.setPreferredSize(new Dimension(240,40));
-//        menuBaoCao.add(htk = new JMenuItem("Hàng tồn kho"));
-//        htk.setPreferredSize(new Dimension(240,40));
         menuBaoCao.add(dt = new JMenuItem("Doanh thu"));
         dt.setPreferredSize(new Dimension(240,40));
         dt.setMnemonic(KeyEvent.VK_D);
         dt.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_D,
                 ActionEvent.CTRL_MASK));
-//        menuBaoCao.add(hbc = new JMenuItem("Hàng bán chạy"));
-//        hbc.setPreferredSize(new Dimension(240,40));
 
         JMenuItem kikh,knv,kncc,kxe;
-        JMenu menuBaoHanh = new JMenu("TÌM KIẾM");
-        menuBaoHanh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/timKiem.png")));
-        menuBaoHanh.setForeground(Color.RED);
+        JMenu menuTimKiem = new JMenu("TÌM KIẾM");
+        menuTimKiem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/timKiem.png")));
+        menuTimKiem.setForeground(Color.RED);
         Font fontBaoHanh = new Font("Arial",Font.BOLD,16);
-        menuBaoHanh.setFont(fontBaoHanh);
-        menuBaoHanh.add(kikh = new JMenuItem("Khách Hàng"));
+        menuTimKiem.setFont(fontBaoHanh);
+        menuTimKiem.add(kikh = new JMenuItem("Khách Hàng"));
         kikh.setPreferredSize(new Dimension(280,40));
-        menuBaoHanh.add(knv = new JMenuItem("Nhân Viên"));
+        menuTimKiem.add(knv = new JMenuItem("Nhân Viên"));
         knv.setPreferredSize(new Dimension(280,40));
-        menuBaoHanh.add(kncc = new JMenuItem("Nhà Cung Cấp"));
+        menuTimKiem.add(kncc = new JMenuItem("Nhà Cung Cấp"));
         kncc.setPreferredSize(new Dimension(280,40));
-        menuBaoHanh.add(kxe = new JMenuItem("Xe Máy"));
+        menuTimKiem.add(kxe = new JMenuItem("Xe Máy"));
         kxe.setPreferredSize(new Dimension(280,40));
 
-        JMenu menuTroGiup = new JMenu("BẢO HÀNH");
-        menuTroGiup.setForeground(Color.RED);
-        menuTroGiup.setFont(fontMenu);
-        menuTroGiup.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/baohanh.png")));
+        JMenu menuBaoHanh = new JMenu("BẢO HÀNH");
+        menuBaoHanh.setForeground(Color.RED);
+        menuBaoHanh.setFont(fontMenu);
+        menuBaoHanh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/baohanh.png")));
 
 
         menuBar.add(menuTrangChu);
@@ -146,8 +140,8 @@ public class GD_Chinh extends JFrame{
         menuBar.add(menuQuanLy);
         menuBar.add(menuNhapHang);
         menuBar.add(menuBaoCao);
+        menuBar.add(menuTimKiem);
         menuBar.add(menuBaoHanh);
-        menuBar.add(menuTroGiup);
 
         JPanel pnWest = new JPanel();
         pnWest.setLayout(new BoxLayout(pnWest,BoxLayout.Y_AXIS));
@@ -174,7 +168,6 @@ public class GD_Chinh extends JFrame{
 
         JPanel pnl2 = new JPanel();
         pnl2.setLayout(new GridLayout(2,2));
-        //pnl2.setBorder(new TitledBorder("Danh Mục"));
         pnl1.setBorder(new TitledBorder("Tìm Kiếm"));
         JButton dmKH = new JButton("Khách hàng");
         dmKH.setBorder(null);

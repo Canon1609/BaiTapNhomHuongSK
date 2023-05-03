@@ -69,7 +69,7 @@ public class TimNhanVien extends JPanel {
             @Override
             public void mouseClicked(MouseEvent e) {
                 if(cbcMaNV.getSelectedItem().equals("Tên")){
-                    lblNhapTen.setText("Nhập Tên Nhân Viên Cần Tìm:");
+                    lblNhapTen.setText("Nhập Tên Nhân Viên:");
                     txtTen.setPreferredSize(new Dimension(400,20));
                     txtTen.setVisible(true);
                     cbcGT.setVisible(false);
@@ -109,7 +109,6 @@ public class TimNhanVien extends JPanel {
         txtThongBao.setEditable(false);
         txtThongBao.setForeground(Color.RED);
         txtThongBao.setFont(new Font("Arial",Font.ITALIC,14));
-        //txtThongBao.setText("Lỗi!");
 
         b.add(Box.createVerticalStrut(40));
         b.add(b4 = Box.createHorizontalBox());

@@ -201,14 +201,6 @@ public class PhieuXuat_Form extends JPanel {
         bcv.add(btnThem = new JButton("Tạo Phiếu Xuất"));
         btnThem.setFont(new Font("Arial",Font.BOLD,17));
         btnThem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/them.png")));
-//        bcv.add(Box.createHorizontalStrut(50));
-//        bcv.add(btnXoa = new JButton("Xóa"));
-//        btnXoa.setFont(new Font("Arial",Font.BOLD,17));
-//        btnXoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/xoa.png")));
-//        bcv.add(Box.createHorizontalStrut(50));
-//        bcv.add(btnSua = new JButton("Sửa"));
-//        btnSua.setFont(new Font("Arial",Font.BOLD,17));
-//        btnSua.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sua.png")));
         bcv.add(Box.createHorizontalStrut(50));
         bcv.add(btnHuy = new JButton("Xóa rỗng"));
         btnHuy.setFont(new Font("Arial",Font.BOLD,17));

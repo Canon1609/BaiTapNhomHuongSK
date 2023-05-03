@@ -189,7 +189,7 @@ public class DangKyTK extends JFrame {
         btnQL.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                gui_Form.Login lg = new gui_Form.Login();
+                gui_Form.Login_gui lg = new gui_Form.Login_gui();
                 lg.setVisible(true);
                 setVisible(false);
             }
@@ -198,28 +198,40 @@ public class DangKyTK extends JFrame {
         btnDangKy.setFont(new Font("Arial",Font.BOLD,17));
         btnDangKy.setForeground(Color.WHITE);
         btnDangKy.setBackground(Color.ORANGE);
-
+        
+        lgDao = new DAO_Login();
         btnDangKy.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(valid()){
-                    if(txtPass.getText().equals(txtXacNhan.getText())) {
-                        if(Integer.parseInt(txtKq.getText())==13) {
-                            txtTb2.setText("Tạo tài khoản thành công!");
-                            entity.Login lg = new Login(txtHo.getText().trim(), txtTen.getText().trim(),
-                                    txtTaiKhoan.getText().trim(),
-                                    txtMail.getText().trim(),
-                                    txtPass.getText(),
-                                    cbc.getSelectedItem().toString());
-                            lgDao = new DAO_Login();
-                            lgDao.addLogin(lg);
-                        }else{
-                            txtTb2.setText("Kết quả không chính xác!");
-                        }
-                    }else {
-                        txtTb1.setText("Mật khẩu không khớp!");
-                    }
-                }
+               try {
+				boolean kq = kt();
+				if(kq==true) {
+					JOptionPane.showMessageDialog(null, "Tài khoản đã tồn tại");
+				}else {
+					 if(valid()){
+		                    if(txtPass.getText().equals(txtXacNhan.getText())) {
+		                        if(Integer.parseInt(txtKq.getText())==13) {
+		                            txtTb2.setText("Tạo tài khoản thành công!");
+		                            entity.Login lg = new Login(txtHo.getText().trim(), txtTen.getText().trim(),
+		                                    txtTaiKhoan.getText().trim(),
+		                                    txtMail.getText().trim(),
+		                                    txtPass.getText(),
+		                                    cbc.getSelectedItem().toString());
+		                            lgDao = new DAO_Login();
+		                            lgDao.addLogin(lg);
+		                        }else{
+		                            txtTb2.setText("Kết quả không chính xác!");
+		                        }
+		                    }else {
+		                        txtTb1.setText("Mật khẩu không khớp!");
+		                    }
+		                }
+				}
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+               
             }
         });
         pnSouth.setPreferredSize(new Dimension(0,80));
@@ -282,5 +294,12 @@ public class DangKyTK extends JFrame {
         DangKyTK dk = new DangKyTK();
         dk.setVisible(true);
 
+    }
+    public boolean kt() throws Exception {
+        for(Login lg : lgDao.getLS()) {
+            if(txtTaiKhoan.getText().equals(lg.getTaiKhoan()))
+                return true;
+        }
+        return false;
     }
 }

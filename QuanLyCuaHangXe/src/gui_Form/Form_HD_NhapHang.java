@@ -71,18 +71,14 @@ public class Form_HD_NhapHang extends JFrame {
         PhieuNhap_Form pn = new PhieuNhap_Form();
         txtpN.setText(pn.txtMaPN.getText());
         System.out.println(txtpN);
-        //txtpN.setEditable(false);
-        //txtpN.setBorder(null);
+
 
         b1.add(Box.createVerticalStrut(5));
         b1.add(b12 = Box.createHorizontalBox());
-        //b1.setPreferredSize(new Dimension(500,20));
         b12.add(Box.createHorizontalStrut(300));
         b12.add(lblNgayN = new JLabel("Ngày Nhập: "));
         lblNgayN.setPreferredSize(lbMPN.getPreferredSize());
         b12.add(txtNgayN = new JTextField(30));
-        //txtNgayN.setEditable(false);
-        //txtNgayN.setBorder(null);
         b1.add(Box.createVerticalStrut(20));
         pnNorth.add(td);
         pnNorth.add(btd);

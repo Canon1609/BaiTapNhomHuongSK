@@ -72,7 +72,7 @@ public class TimKhachHang extends JPanel {
                     cbcGT.setVisible(true);
 
                 }else if(cbcMa.getSelectedItem().equals("Tên")){
-                    lblNhapTen.setText("Nhập Tên Khách Hàng Cần Tìm:");
+                    lblNhapTen.setText("Nhập Tên Khách Hàng:");
                     cbcGT.setVisible(false);
                     txtTen.setVisible(true);
                 }

@@ -3,11 +3,13 @@ package gui_Form;
 import javax.swing.*;
 
 import dao.DAO_Login;
+import entity.Login;
+import entity.XeMay;
 
 import java.awt.*;
 import java.awt.event.*;
 
-public class Login extends JFrame {
+public class Login_gui extends JFrame {
     /**
 	 * 
 	 */
@@ -18,7 +20,7 @@ public class Login extends JFrame {
     JTextField txtUser;
     JPasswordField txtPass;
     JButton btnDn,btnHelp,btnThoat,btnDK;
-    public Login(){
+    public Login_gui(){
         setSize(800,400);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -105,12 +107,12 @@ public class Login extends JFrame {
         });
         pnCenter.add(b);
         cp.add(pnCenter,BorderLayout.CENTER);
-
+        lgDao = new DAO_Login();
         lblPass.setPreferredSize(lblUser.getPreferredSize());
         btnDn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                lgDao = new DAO_Login();
+                
                 int d = lgDao.TimKiem(txtUser.getText(), txtPass.getText()).toArray().length;
                 System.out.println(d);
                 if(!txtUser.getText().equals("") && !txtPass.getPassword().equals("")) {
@@ -139,7 +141,8 @@ public class Login extends JFrame {
     }
 
     public static void main(String[] args) {
-        Login lg = new Login();
+        Login_gui lg = new Login_gui();
         lg.setVisible(true);
     }
+
 }

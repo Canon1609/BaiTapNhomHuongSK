@@ -93,6 +93,7 @@ public class DAO_LoaiXe {
 
         return false;
     }
+    
     public List<LoaiXe> getLS() {
         List<LoaiXe> ds = new ArrayList<>();
         try {

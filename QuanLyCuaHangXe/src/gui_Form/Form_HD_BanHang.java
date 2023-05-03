@@ -66,8 +66,7 @@ public class Form_HD_BanHang extends JFrame {
         b11.add(Box.createHorizontalStrut(300));
         b11.add(lbMPX = new JLabel("Mã Phiếu Xuất: "));
         b11.add(txtpX = new JTextField(10));
-        //txtpN.setEditable(false);
-        //txtpN.setBorder(null);
+
 
         b1.add(Box.createVerticalStrut(5));
         b1.add(b12 = Box.createHorizontalBox());
@@ -76,8 +75,6 @@ public class Form_HD_BanHang extends JFrame {
         b12.add(lblNgayX = new JLabel("Ngày Xuất: "));
         lblNgayX.setPreferredSize(lbMPX.getPreferredSize());
         b12.add(txtNgayX = new JTextField(30));
-        //txtNgayN.setEditable(false);
-        //txtNgayN.setBorder(null);
         b1.add(Box.createVerticalStrut(20));
         pnNorth.add(td);
         pnNorth.add(btd);

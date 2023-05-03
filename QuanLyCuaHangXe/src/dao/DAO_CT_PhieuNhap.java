@@ -18,7 +18,6 @@ public class DAO_CT_PhieuNhap {
 		} finally {
 			System.out.println("Finished!");
 		}
-
 	}
 
 	/**

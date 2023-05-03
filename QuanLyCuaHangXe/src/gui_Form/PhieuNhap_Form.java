@@ -198,14 +198,6 @@ public class PhieuNhap_Form extends JPanel {
         bcv.add(btnThem = new JButton("Tạo Phiếu Nhập"));
         btnThem.setFont(new Font("Arial",Font.BOLD,17));
         btnThem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/them.png")));
-//        bcv.add(Box.createHorizontalStrut(50));
-//        bcv.add(btnXoa = new JButton("Xóa"));
-//        btnXoa.setFont(new Font("Arial",Font.BOLD,17));
-//        btnXoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/xoa.png")));
-//        bcv.add(Box.createHorizontalStrut(50));
-//        bcv.add(btnSua = new JButton("Sửa"));
-//        btnSua.setFont(new Font("Arial",Font.BOLD,17));
-//        btnSua.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sua.png")));
         bcv.add(Box.createHorizontalStrut(50));
         bcv.add(btnHuy = new JButton("Xóa Rỗng"));
         btnHuy.setFont(new Font("Arial",Font.BOLD,17));
@@ -283,32 +275,7 @@ public class PhieuNhap_Form extends JPanel {
 				
 			}
 		});
-//        btnXoa.addActionListener(new ActionListener() {
-//			
-//			@Override
-//			public void actionPerformed(ActionEvent e) {
-//				int row = table.getSelectedRow();
-//				if(row!=-1) {
-//					int tb = JOptionPane.showConfirmDialog(null,"Bạn chắc chắn muốn xóa dòng này?","Delete",
-//                            JOptionPane.YES_NO_OPTION);
-//					if(tb == JOptionPane.YES_OPTION) {
-//                        String maLoai = tableModel.getValueAt(row, 1).toString();
-//                        if (lxDao.deleteXe(maLoai)) {
-//                            try {
-//                            	table.setModel(new LoaiXeTableModel(lxDao.getLS()));
-//                            } catch (Exception ex) {
-//                                ex.printStackTrace();
-//                            }
-//                        }
-//                        xoaRong();
-//                    }
-//				}else {
-//                    JOptionPane.showMessageDialog(null,"Bạn chưa chọn dòng cần xóa!");
-//
-//				}
-//				
-//			}
-//		});
+
 
         lblMaLoai.setPreferredSize(lblMaPN.getPreferredSize());
         lblMaNCC.setPreferredSize(lblMaNV.getPreferredSize());
@@ -354,7 +321,7 @@ public class PhieuNhap_Form extends JPanel {
     }
     public boolean kt() throws Exception {
         for(PhieuNhap pnq : pnDao.getLS()) {
-            if(txtMaPN.getText().equals(pnq.getMaPN()));
+            if(txtMaPN.getText().equals(pnq.getMaPN()))
                 return true;
         }
         return false;

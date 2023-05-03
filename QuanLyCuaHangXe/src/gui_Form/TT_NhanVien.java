@@ -72,7 +72,7 @@ public class TT_NhanVien extends JPanel {
         cbcGT.setPreferredSize(new Dimension(305,20));
         b3.add(cbcGT);
         b3.add(Box.createHorizontalStrut(10));
-        b3.add(lblCMND = new JLabel("Số CMND:          "));
+        b3.add(lblCMND = new JLabel("Số CCCD:          "));
         b3.add(txtCMND = new JTextField());
         b.add(Box.createVerticalStrut(15));
 
@@ -158,7 +158,6 @@ public class TT_NhanVien extends JPanel {
 	                                    Double.parseDouble(txtE.getText().trim()));
 	                            if(nvDao.addNhanVien(nv))
 	                                table.setModel(new NVTableModel(nvDao.getLS()));
-	                            // tableModel.fireTableDataChanged();
 	                        }
 	                            else
 	                                JOptionPane.showMessageDialog(null,"Bạn chưa nhập thông tin!");
@@ -335,7 +334,7 @@ public class TT_NhanVien extends JPanel {
     		return false;
     	}
     	if(!(txtCMND.getText().matches("\\d{9}"))) {
-    		JOptionPane.showMessageDialog(null, "CMND theo mẫu : 197391890");
+    		JOptionPane.showMessageDialog(null, "CMND theo mẫu : 197408200");
     		txtCMND.requestFocus();
     		return false;
     	}
