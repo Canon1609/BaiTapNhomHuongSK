@@ -262,7 +262,7 @@ public class TT_XeMay extends JPanel {
     }
     public boolean kt() throws Exception {
         for(XeMay xe : xeDao.getLS()) {
-            if(txtMa.getText().equals(xe.getMaXe()));
+            if(txtMa.getText().equals(xe.getMaXe()))
                 return true;
         }
         return false;

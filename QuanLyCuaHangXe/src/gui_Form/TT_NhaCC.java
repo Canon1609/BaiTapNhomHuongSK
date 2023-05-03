@@ -238,7 +238,7 @@ public class TT_NhaCC extends JPanel {
     }
     public boolean kt() throws Exception {
         for(NhaCungCap ncc : nccDao.getLS()) {
-            if(txtMa.getText().equals(ncc.getMaNCC()));
+            if(txtMa.getText().equals(ncc.getMaNCC()))
                 return true;
         }
         return false;

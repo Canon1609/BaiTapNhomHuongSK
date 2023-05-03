@@ -299,7 +299,7 @@ public class TT_NhanVien extends JPanel {
     }
     public boolean kt() throws Exception {
         for(NhanVien nv : nvDao.getLS()) {
-            if(txtMa.getText().equals(nv.getMaNV()));
+            if(txtMa.getText().equals(nv.getMaNV()))
                 return true;
         }
         return false;
