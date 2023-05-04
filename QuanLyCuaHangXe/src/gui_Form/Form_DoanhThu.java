@@ -109,7 +109,7 @@ public class Form_DoanhThu extends JPanel {
                     }
                     Double tong = 0.0;
                     for(int i = 0; i < table.getRowCount();i++){
-                        tong += (ds.TimKiemPX(table.getValueAt(i,0).toString()).getXeMay().getDonGia()+
+                        tong += (ds.TimKiemPX(table.getValueAt(i,0).toString()).getXeMay().getDonGia()-
                                 ds.TimKiemPX(table.getValueAt(i,0).toString()).getThue());
                     }
                     txtDoanhThu.setText(tong.toString());
@@ -135,7 +135,7 @@ public class Form_DoanhThu extends JPanel {
                     }
                     Double tong = 0.0;
                     for(int i = 0; i < table.getRowCount();i++){
-                        tong += (ds.TimKiemPX(table.getValueAt(i,0).toString()).getXeMay().getDonGia()+
+                        tong += (ds.TimKiemPX(table.getValueAt(i,0).toString()).getXeMay().getDonGia()-
                                 ds.TimKiemPX(table.getValueAt(i,0).toString()).getThue());
                     }
                     txtDoanhThu.setText(tong.toString());

@@ -16,7 +16,6 @@ public class DAO_PhieuXuat {
         }finally {
             System.out.println("Finished!");
         }
-
     }
 
     public ResultSet getResultSet(String StoreName)throws Exception {
@@ -64,29 +63,7 @@ public class DAO_PhieuXuat {
 
         return false;
     }
-    //    public boolean updateKhachHang(String maKH, KhachHang kh) {
-//        String sql = "update KhachHang set TENKHACHHANG = ?, "
-//                + "GIOITINH = ?,DIACHI = ? ,DIENTHOAI = ?,EMAIL = ? where MAKHACHHANG = ?";
-//        try {
-//            PreparedStatement stmt = con.prepareStatement(sql);
-//            stmt.setString(1, kh.getTenKH());
-//            stmt.setString(2, kh.getGioiTinh());
-//            stmt.setString(3, kh.getDiaChi());
-//            stmt.setInt(4, kh.getDienThoai());
-//            stmt.setString(5, kh.geteMail());
-//            stmt.setString(6, maKH);
-//
-//            int n = stmt.executeUpdate();
-//            if(n > 0)
-//                return true;
-//
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return false;
-//    }
-//
+
     public List<PhieuXuat> getLS() throws Exception {
         List<PhieuXuat> ds = new ArrayList<>();
         try {
@@ -104,22 +81,7 @@ public class DAO_PhieuXuat {
 
         return ds;
     }
-//    public List<KhachHang> TimKiem(String maKH){
-//        List<KhachHang> kh = new ArrayList<>();
-//        try{
-//            PreparedStatement stmt = con.prepareStatement("select * from KhachHang where MAKHACHHANG = ?");
-//            stmt.setString(1,maKH);
-//            ResultSet rs = stmt.executeQuery();
-//            while(rs.next()) {
-//                KhachHang kh1 = new KhachHang(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
-//                        rs.getInt(5), rs.getString(6));
-//                kh.add(kh1);
-//            }
-//        }catch (SQLException e){
-//            e.printStackTrace();
-//        }
-//        return kh;
-//    }
+
 
     public List<PhieuXuat> TimKiem(String maPX){
         List<PhieuXuat> px = new ArrayList<>();
